@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lades Laboratório</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        /* CSS embutido aqui */
+        body {
+            font-family: sans-serif; /* Fonte simples e moderna */
+            margin: 0; /* Remove margens padrão */
+        }
+        header {
+            background-color: #008000; /* Cor verde da logo */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none; /* Remove marcadores da lista */
+            padding: 0;
+            margin: 0;
+        }
+        nav li {
+            display: inline; /* Alinha itens do menu horizontalmente */
+            margin-right: 20px;
+        }
+        nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease; /* Transição suave na cor */
+}
+nav a:hover {
+    color: #f00; /* Cor vermelha ao passar o mouse */
+}
+        section {
+              display: flex;
+              flex-direction: column; /* Alinha os itens verticalmente */
+              align-items: center; /* Centraliza os itens horizontalmente */
+              padding: 20px;
+}
+        footer {
+            background-color: #008000;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Lades Laboratório</h1>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#exames">Exames</a></li>
+                <li><a href="#coleta">Coleta</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#resultados">Resultados</a></li>
+            </ul>
+        </nav>
+    </header>
+    <a href="https://wa.me/5581992797683" target="_blank" style="position: fixed; bottom: 20px; right: 20px; z-index: 100;">
+      <img src="..//lades.com.br/images/whats_button.png" alt="WhatsApp" width="250"> 
+  </a>
+  <section id="inicio">
+    <h2>Bem-vindos ao Lades Laboratório!</h2>
+    <p>Aqui você encontra qualidade e precisão em análises clínicas.</p>
+    <img src="banner.jpg" alt="Banner Promocional"> 
+</section>
+
+    <section id="inicio">
+        <h2>Bem-vindos ao Lades Laboratório!</h2>
+        <p>Aqui você encontra qualidade e precisão em análises clínicas.</p>
+        </section>
+
+    <section id="exames">
+        <h2>Exames Oferecidos</h2>
+        <p>Lista de exames</p>
+    </section>
+
+    <section id="coleta">
+        <h2>Coleta de Materiais</h2>
+        <p>Informações sobre a coleta</p>
+    </section>
+
+    <section id="sobre">
+        <h2>Sobre o Lades Laboratório</h2>
+        <p>Nossa história e missão</p>
+    </section>
+
+    <section id="resultados">
+        <h2>Resultados de Exames</h2>
+        <p>Como acessar seus resultados</p>
+    </section>
+
+    <footer>
+      <iframe src="https://worklabweb.com.br/frame.php?Cliente=881&i=1" name="I1" width="450" height="135" marginwidth="0" marginheight="0" frameborder="no" target="_self" scrolling="no"></iframe>
+      <audio autoplay loop>
+        <source src="../Lades.com.br/music/happy-day-113985.mp3" type="audio/mpeg">
+        Seu navegador não suporta a tag de áudio.
+    </audio>
+    <div class="music-box">
+      <span id="music-name">Nome da Música</span> - <span id="music-author">Autor</span>
+      <button id="play-button">Play</button>
+      <button id="pause-button">Pause</button>
+  </div>
+        <p>&copy; 2024 Lades Laboratório - Análises Clínicas</p>
+    </footer>
+
+    <script>
+        const audio = document.querySelector('audio');
+const playButton = document.getElementById('play-button');
+const pauseButton = document.getElementById('pause-button');
+
+playButton.addEventListener('click', () => {
+    audio.play();   
+
+});
+
+pauseButton.addEventListener('click', () => {
+    audio.pause();   
+
+});
+    </script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        ScrollReveal().reveal('.animate-on-scroll', { delay: 200 });
+    </script>
+
+</body>
+</html>
