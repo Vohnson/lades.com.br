@@ -192,23 +192,15 @@ body {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: #25d366;
   color: var(--white);
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   border-radius: var(--radius-full);
   display: flex;
   align-items: center;
   justify-content: center;
-  text-decoration: none;
-  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
   z-index: 1000;
   transition: var(--transition-default);
-}
-
-.whatsapp-button:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
 }
 
 /* Player de Áudio */
@@ -398,6 +390,44 @@ body {
   object-fit: cover; /* Mantém proporção */
   border-radius: var(--radius-full);
   box-shadow: var(--shadow-md);
+}
+
+@keyframes shake {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(-10deg); }
+  20% { transform: rotate(10deg); }
+  30% { transform: rotate(-10deg); }
+  40% { transform: rotate(10deg); }
+  50% { transform: rotate(-10deg); }
+  60% { transform: rotate(10deg); }
+  70% { transform: rotate(-10deg); }
+  80% { transform: rotate(10deg); }
+  90% { transform: rotate(-10deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* Aplicamos a animação ao botão do WhatsApp */
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: var(--white);
+  width: 70px;
+  height: 70px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: var(--transition-default);
+  animation: shake 1s ease-in-out;
+  animation-iteration-count: infinite;
+  animation-delay: 2s; /* Faz a animação ocorrer a cada 2 segundos */
+}
+
+/* Opcional: Parar a animação quando passar o mouse por cima */
+.whatsapp-button:hover {
+  animation: none;
 }
 
 /* Media Queries */
