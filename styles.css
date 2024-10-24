@@ -386,18 +386,23 @@ body {
   transform: translateY(-2px);
 }
 
-/* Adicione estes estilos */
+/* Menu Mobile - Botão só aparece em mobile */
 .menu-mobile {
-  display: none;
-  background: none;
-  border: none;
-  color: var(--primary-green);
-  cursor: pointer;
-  padding: 0.5rem;
+  display: none; /* Esconde por padrão */
 }
 
-/* Modifique a media query */
+/* Ajuste da logo do rodapé */
+.logo-rodape img {
+  width: 60px; /* Tamanho menor */
+  height: 60px;
+  object-fit: cover; /* Mantém proporção */
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-md);
+}
+
+/* Media Queries */
 @media (max-width: 768px) {
+  /* Menu Mobile */
   .nav-links {
       display: none;
       position: absolute;
@@ -408,6 +413,7 @@ body {
       flex-direction: column;
       padding: 1rem;
       box-shadow: var(--shadow-md);
+      gap: 1rem;
   }
 
   .nav-links.active {
@@ -415,47 +421,52 @@ body {
   }
 
   .menu-mobile {
-      display: block;
-  }
-  
-  /* ... resto do seu media query ... */
-}
-
-/* Media Queries */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
+      display: block; /* Mostra o botão em mobile */
   }
 
+  /* Conteúdo */
   .hero h1 {
-    font-size: 2rem;
+      font-size: 2rem;
   }
 
   .section-title {
-    font-size: 2rem;
+      font-size: 2rem;
   }
 
+  /* Player de Áudio */
   .audio-player {
-    min-width: auto;
-    max-width: 200px;
+      min-width: auto;
+      max-width: 200px;
   }
 
   .volume-slider {
-    width: 60px;
+      width: 60px;
   }
 
-  /* Apenas regras responsivas do rodapé */
+  /* Rodapé */
   .info-rodape {
-    flex-direction: column;
-    text-align: center;
+      flex-direction: column;
+      text-align: center;
   }
 
   .logo-rodape img {
-    width: 80px;
-    height: 80px;
+      width: 80px;
+      height: 80px;
   }
 
   .dados-contato-rodape {
-    text-align: center;
+      text-align: center;
+  }
+}
+
+/* Desktop */
+@media (min-width: 769px) {
+  .menu-mobile {
+      display: none; /* Esconde o botão em desktop */
+  }
+
+  .nav-links {
+      display: flex;
+      gap: 2rem;
   }
 }
