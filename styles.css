@@ -279,9 +279,9 @@ body {
   width: 100px;
   height: 4px;
   -webkit-appearance: none;
-  appearance: none; /* Adiciona suporte para outros navegadores */
-  background: var(--verde-primario);
-  border-radius: var(--borda-pequena);
+  appearance: none;
+  background: var(--primary-green);
+  border-radius: var(--radius-sm);
   outline: none;
 }
 
@@ -290,18 +290,24 @@ body {
   appearance: none;
   width: 12px;
   height: 12px;
-  background: var(--verde-primario);
-  border-radius: var(--borda-circular);
+  background: var(--primary-green);
+  border-radius: var(--radius-full);
   cursor: pointer;
 }
 
 .volume-slider::-moz-range-thumb {
   width: 12px;
   height: 12px;
-  background: var(--verde-primario);
+  background: var(--primary-green);
   border: none;
-  border-radius: var(--borda-circular);
+  border-radius: var(--radius-full);
   cursor: pointer;
+}
+
+.volume-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .volume-icon {
@@ -378,6 +384,41 @@ body {
 .destaque:hover {
   background: rgba(255, 255, 255, 0.2);
   transform: translateY(-2px);
+}
+
+/* Adicione estes estilos */
+.menu-mobile {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--primary-green);
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+/* Modifique a media query */
+@media (max-width: 768px) {
+  .nav-links {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.98);
+      flex-direction: column;
+      padding: 1rem;
+      box-shadow: var(--shadow-md);
+  }
+
+  .nav-links.active {
+      display: flex;
+  }
+
+  .menu-mobile {
+      display: block;
+  }
+  
+  /* ... resto do seu media query ... */
 }
 
 /* Media Queries */
