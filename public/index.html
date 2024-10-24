@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lades Laboratório</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="/public/style.css" />
+    <link rel="icon" type="image/x-icon" href="/images/logoRedonda.png" />
+    <script src="/public/script.js" defer></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-content">
+        <div class="logo">
+          <img src="/images/logoRedonda.png" alt="Lades Laboratório" />
+        </div>
+        <div class="nav-links">
+          <a href="#inicio">Início</a>
+          <a href="#exames">Exames</a>
+          <a href="#coleta">Coleta</a>
+          <a href="#sobre">Sobre</a>
+          <a href="https://portal.worklabweb.com.br/resultados/881?c=&p="
+            >Resultados</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <section id="inicio" class="hero">
+      <div class="hero-content" data-aos="fade-up">
+        <h1>Lades Laboratório</h1>
+        <p>Excelência e precisão em análises clínicas</p>
+      </div>
+    </section>
+
+    <section id="exames" class="section" data-aos="fade-up">
+      <h2 class="section-title">Nossos Exames</h2>
+      <div class="service-cards">
+        <div class="card" data-aos="fade-up" data-aos-delay="100">
+          <h3>Exames de Rotina</h3>
+          <p>Hemograma, glicemia, colesterol e muito mais.</p>
+        </div>
+        <div class="card" data-aos="fade-up" data-aos-delay="200">
+          <h3>Exames Específicos</h3>
+          <p>Hormonais, marcadores tumorais e outros.</p>
+        </div>
+        <div class="card" data-aos="fade-up" data-aos-delay="300">
+          <h3>Exames de Urgência</h3>
+          <p>Resultados com agilidade quando você precisa.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="coleta" class="section" data-aos="fade-up">
+      <h2 class="section-title">Coleta</h2>
+      <div class="service-cards">
+        <div class="card" data-aos="fade-up">
+          <h3>Atendimento Humanizado</h3>
+          <p>Equipe especializada e preparada para seu conforto.</p>
+        </div>
+        <div class="card" data-aos="fade-up">
+          <h3>Ambiente Seguro</h3>
+          <p>Instalações modernas e protocolos rigorosos de higiene.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre" class="section" data-aos="fade-up">
+      <h2 class="section-title">Sobre Nós</h2>
+      <div class="contact-info">
+        <h3>Unidade Matriz - Toritama/PE</h3>
+        <p>Rua Manoel Borba, 120 - Centro</p>
+        <p>WhatsApp: (81) 9279-7683</p>
+      </div>
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.9059781670057!2d-36.056372426270514!3d-8.008632379906548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7a9785ba5085d8f%3A0xde373ab80f9d1ece!2sLades%20Laborat%C3%B3rio!5e0!3m2!1spt-BR!2sbr!4v1729682888494!5m2!1spt-BR!2sbr"
+          width="100%"
+          height="100%"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </section>
+
+    <div class="audio-player">
+      <button id="playPauseBtn" onclick="togglePlay()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M8 5v14l11-7z" />
+        </svg>
+      </button>
+      <div class="audio-controls">
+        <p class="song-info">
+          <a
+            href="https://pixabay.com/pt/users/stockaudios-28301327/"
+            target="_blank"
+            class="song-link"
+            >Happy Day</a
+          >
+        </p>
+        <div class="volume-control">
+          <svg
+            class="volume-icon"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path
+              d="M12,4L9.91,6.09L12,8.18M4.27,3L3,4.27L7.73,9H3V15H7L12,20V13.27L16.25,17.53C15.58,18.04 14.83,18.46 14,18.7V20.77C15.38,20.45 16.63,19.82 17.68,18.96L19.73,21L21,19.73L12,10.73M19,12C19,12.94 18.8,13.82 18.46,14.64L19.97,16.15C20.62,14.91 21,13.5 21,12C21,7.72 18,4.14 14,3.23V5.29C16.89,6.15 19,8.83 19,12M16.5,12C16.5,10.23 15.5,8.71 14,7.97V10.18L16.45,12.63C16.5,12.43 16.5,12.21 16.5,12Z"
+            />
+          </svg>
+          <input
+            type="range"
+            id="volumeSlider"
+            min="0"
+            max="100"
+            value="5"
+            class="volume-slider"
+          />
+        </div>
+      </div>
+    </div>
+    
+    <audio id="bgMusic" loop>
+      <source src="/music/happy-day-113985.mp3" type="audio/mp3" />
+    </audio>
+
+  </body>
+  <footer class="rodape">
+    <div class="container-rodape">
+      <div class="info-rodape">
+        <div class="logo-rodape">
+          <img
+            src="/images/logoRedonda.png"
+            alt="Lades Laboratório"
+            width="10"
+          />
+        </div>
+      </div>
+      <div class="creditos-rodape">
+        <p>© 2024 Lades Laboratório - Todos os direitos reservados</p>
+        <p class="assinatura">
+          Desenvolvido por <span class="destaque">< VohnsonV /> DEV</span>
+        </p>
+      </div>
+    </div>
+    <a
+    href="https://wa.me/5581992797683"
+    class="whatsapp-button"
+    target="_blank"
+  >
+    <svg
+      width="30"
+      height="30"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path
+        d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
+      ></path>
+    </svg>
+  </a>
+  </footer>
+</html>
