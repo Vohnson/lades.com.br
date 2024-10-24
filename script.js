@@ -99,13 +99,42 @@ const MobileMenu = {
               navLinks.classList.toggle('active');
           });
 
-          // Fecha o menu ao clicar em um link
-          const links = navLinks.querySelectorAll('a');
-          links.forEach(link => {
-              link.addEventListener('click', () => {
-                  navLinks.classList.remove('active');
-              });
-          });
+          const MobileMenu = {
+            setupMenuToggle() {
+                const menuButton = document.querySelector('.menu-mobile');
+                const navLinks = document.querySelector('.nav-links');
+        
+                if (menuButton) {
+                    menuButton.addEventListener('click', () => {
+                        navLinks.classList.toggle('active');
+                    });
+        
+                    // Usando for...of em vez de forEach
+                    const links = navLinks.querySelectorAll('a');
+                    for (const link of links) {
+                        link.addEventListener('click', () => {
+                            navLinks.classList.remove('active');
+                        });
+                    }
+        
+                    // Fecha o menu ao rolar a página
+                    window.addEventListener('scroll', () => {
+                        if (navLinks.classList.contains('active')) {
+                            navLinks.classList.remove('active');
+                        }
+                    });
+                }
+            },
+        
+            init() {
+                this.setupMenuToggle();
+            }
+        };
+        
+        // Inicialização
+        document.addEventListener('DOMContentLoaded', () => {
+            MobileMenu.init();
+        });
 
           // Fecha o menu ao rolar a página
           window.addEventListener('scroll', () => {
