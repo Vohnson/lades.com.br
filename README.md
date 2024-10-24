@@ -1,2 +1,2 @@
 # lades.com.br
- Site criado para um laboratório de análises clínicas
+ Site criado para um laboratório de análises clínicas.
