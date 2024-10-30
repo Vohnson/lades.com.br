@@ -364,6 +364,18 @@ body {
   margin-top: 1rem;
 }
 
+.link-dev {
+  text-decoration: none;
+  color: inherit; /* Mantém a cor do texto do span pai */
+  transition: var(--transition-default);
+}
+
+.link-dev:hover {
+  color: var(--white); /* Ou qualquer outra cor que desejar no hover */
+  text-decoration: none;
+}
+
+/* O estilo que você já tem */
 .destaque {
   font-weight: bold;
   font-family: "Courier New", monospace;
