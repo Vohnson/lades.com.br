@@ -371,7 +371,7 @@ body {
 }
 
 .link-dev:hover {
-  color: var(--white); /* Ou qualquer outra cor que desejar no hover */
+  color: var(#ffffff); /* Ou qualquer outra cor que desejar no hover */
   text-decoration: none;
 }
 
