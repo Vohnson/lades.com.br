@@ -60,10 +60,11 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  background: #fafffc;
-  padding: 0.2rem;
+  background: rgba(255, 255, 255, 0.98);
+  padding: 0.5rem;
   box-shadow: var(--shadow-sm);
   z-index: 1000;
+  transition: var(--transition-default);
 }
 
 .nav-content {
@@ -75,7 +76,7 @@ body {
 }
 
 .logo img {
-  height: 80px;
+  height: 60px;
 }
 
 .nav-links {
@@ -112,19 +113,35 @@ body {
   text-align: center;
   color: var(--white);
   padding-top: 70px;
+  overflow: hidden;
 }
 
-.hero-content {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 2rem;
-  border-radius: var(--radius-md);
-  backdrop-filter: blur(5px);
-}
-
-.hero h1 {
+.typing-animation {
   font-size: 3rem;
   margin-bottom: 1rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  animation: typing 3s steps(40, end), blink 0.5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid var(--white);
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  from {
+    border-color: transparent;
+  }
+  to {
+    border-color: var(--white);
+  }
 }
 
 /* Títulos e Texto */
@@ -201,6 +218,27 @@ body {
   justify-content: center;
   z-index: 1000;
   transition: var(--transition-default);
+  animation: shake 1s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.whatsapp-button:hover {
+  animation: none;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+@keyframes shake {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(-10deg); }
+  20% { transform: rotate(10deg); }
+  30% { transform: rotate(-10deg); }
+  40% { transform: rotate(10deg); }
+  50% { transform: rotate(-10deg); }
+  60% { transform: rotate(10deg); }
+  70% { transform: rotate(-10deg); }
+  80% { transform: rotate(10deg); }
+  90% { transform: rotate(-10deg); }
+  100% { transform: rotate(0deg); }
 }
 
 /* Player de Áudio */
@@ -334,8 +372,9 @@ body {
 }
 
 .logo-rodape img {
-  width: 100px;
-  height: 100px;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
   border-radius: var(--radius-full);
   box-shadow: var(--shadow-md);
 }
@@ -366,16 +405,16 @@ body {
 
 .link-dev {
   text-decoration: none;
-  color: inherit; /* Mantém a cor do texto do span pai */
+  color: inherit;
   transition: var(--transition-default);
 }
 
 .link-dev:hover {
-  color: var(#ffffff); /* Ou qualquer outra cor que desejar no hover */
+  color: var(--white);
   text-decoration: none;
 }
 
-/* O estilo que você já tem */
+/* Destaque */
 .destaque {
   font-weight: bold;
   font-family: "Courier New", monospace;
@@ -392,54 +431,7 @@ body {
 
 /* Menu Mobile - Botão só aparece em mobile */
 .menu-mobile {
-  display: none; /* Esconde por padrão */
-}
-
-/* Ajuste da logo do rodapé */
-.logo-rodape img {
-  width: 60px; /* Tamanho menor */
-  height: 60px;
-  object-fit: cover; /* Mantém proporção */
-  border-radius: var(--radius-full);
-  box-shadow: var(--shadow-md);
-}
-
-@keyframes shake {
-  0% { transform: rotate(0deg); }
-  10% { transform: rotate(-10deg); }
-  20% { transform: rotate(10deg); }
-  30% { transform: rotate(-10deg); }
-  40% { transform: rotate(10deg); }
-  50% { transform: rotate(-10deg); }
-  60% { transform: rotate(10deg); }
-  70% { transform: rotate(-10deg); }
-  80% { transform: rotate(10deg); }
-  90% { transform: rotate(-10deg); }
-  100% { transform: rotate(0deg); }
-}
-
-/* Aplicamos a animação ao botão do WhatsApp */
-.whatsapp-button {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  color: var(--white);
-  width: 70px;
-  height: 70px;
-  border-radius: var(--radius-full);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-  transition: var(--transition-default);
-  animation: shake 1s ease-in-out;
-  animation-iteration-count: infinite;
-  animation-delay: 2s; /* Faz a animação ocorrer a cada 2 segundos */
-}
-
-/* Opcional: Parar a animação quando passar o mouse por cima */
-.whatsapp-button:hover {
-  animation: none;
+  display: none;
 }
 
 /* Media Queries */
@@ -463,10 +455,9 @@ body {
   }
 
   .menu-mobile {
-      display: block; /* Mostra o botão em mobile */
+      display: block;
   }
 
-  /* Conteúdo */
   .hero h1 {
       font-size: 2rem;
   }
@@ -475,7 +466,6 @@ body {
       font-size: 2rem;
   }
 
-  /* Player de Áudio */
   .audio-player {
       min-width: auto;
       max-width: 200px;
@@ -485,7 +475,6 @@ body {
       width: 60px;
   }
 
-  /* Rodapé */
   .info-rodape {
       flex-direction: column;
       text-align: center;
@@ -504,7 +493,7 @@ body {
 /* Desktop */
 @media (min-width: 769px) {
   .menu-mobile {
-      display: none; /* Esconde o botão em desktop */
+      display: none;
   }
 
   .nav-links {
